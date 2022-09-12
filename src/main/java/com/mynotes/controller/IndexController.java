@@ -71,7 +71,7 @@ public class IndexController {
 		return new ResponseEntity<List<DateModel>>(dateModel, HttpStatus.OK);
 	}
 	
-	@PostMapping(value = "/{id}/deletar", produces = "application/json")
+	@DeleteMapping(value = "/{id}/deletar", produces = "application/json")
 	public ResponseEntity<String> delete(@PathVariable(value = "id")Long id){
 		
 		Optional<NoteModel> note = noteRepository.findById(id); //procuro pelo id, um lembrete no banco, pesquisando pelo id que foi passado na requisição
