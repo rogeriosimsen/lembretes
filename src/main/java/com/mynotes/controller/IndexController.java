@@ -66,7 +66,7 @@ public class IndexController {
 	@GetMapping(value = "listar")
 	public ResponseEntity<List<DateModel>> listAll(){
 		
-		List<DateModel> dateModel = (List<DateModel>) dateRepository.findAll();
+		List<DateModel> dateModel = (List<DateModel>) dateRepository.findAllInOrder();
 		
 		return new ResponseEntity<List<DateModel>>(dateModel, HttpStatus.OK);
 	}

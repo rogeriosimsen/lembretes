@@ -18,4 +18,7 @@ public interface DateRepository extends CrudRepository<DateModel, Long> {
 
 	@Query("select d from DateModel d where d.date like %?1%")
 	DateModel findByData(String date);
+	
+	@Query("select d from DateModel d order by d.date ASC")
+	List<DateModel> findAllInOrder();
 }
